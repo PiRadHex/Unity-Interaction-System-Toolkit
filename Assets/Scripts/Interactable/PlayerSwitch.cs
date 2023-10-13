@@ -9,7 +9,6 @@ public class PlayerSwitch : Interactable
     public List<CinemachineVirtualCamera> virtualCameras;
     public bool switchControl = true;
     public List<GameObject> players;
-    [HideInInspector] public Transform destinationFlag;
 
     private int currentCameraIndex = 0;
     private int currentPlayerIndex = 0;
@@ -17,7 +16,7 @@ public class PlayerSwitch : Interactable
     public override void Interact(Transform interactingObjectTransform)
     {
         base.Interact(interactingObjectTransform);
-
+        
         if (virtualCameras[currentCameraIndex].Priority == 10)
         {
             currentCameraIndex = (currentCameraIndex + 1) % virtualCameras.Count;
@@ -54,11 +53,6 @@ public class PlayerSwitch : Interactable
 
             player1.RemoveFocus();
             player1.enabled = false;
-
-            if (destinationFlag != null)
-            {
-                destinationFlag.position = player2.transform.position;
-            }
                     
 
         }
