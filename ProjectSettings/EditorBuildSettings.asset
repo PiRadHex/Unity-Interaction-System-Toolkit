@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HOME.unity
-    guid: 1dde4c1c90f507b418128dd1bbca913b
-  - enabled: 1
-    path: Assets/Scenes/copy.unity
-    guid: 7f0c68488a94a6d4c8688f7301aee0eb
-  - enabled: 1
-    path: Assets/Scenes/Quoridor.unity
-    guid: 1b44d4cda8bf3ed4eb10ca8ffd7abf04
-  - enabled: 1
-    path: Assets/Scenes/Test Car.unity
-    guid: a744535471bf1004d91230461bb5ecc0
+    path: Assets/Scenes/Demo.unity
+    guid: 1fdfc7845c196e94b842c71aafd146d3
   m_configObjects: {}
