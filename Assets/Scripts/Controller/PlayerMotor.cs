@@ -28,8 +28,8 @@ public class PlayerMotor : MonoBehaviour
         character = GetComponent<ThirdPersonCharacter>();
         lineRenderer = GetComponent<LineRenderer>();
         
-        lineRenderer.startWidth = 0.05f;
-        lineRenderer.endWidth = 0.05f;
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
         lineRenderer.positionCount = 0;
     }
 
