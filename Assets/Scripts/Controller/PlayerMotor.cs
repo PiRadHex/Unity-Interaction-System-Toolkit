@@ -136,7 +136,7 @@ public class PlayerMotor : MonoBehaviour
 
         if (agent.remainingDistance / agent.stoppingDistance > 10 /*&& Mathf.Abs(agent.transform.rotation.eulerAngles.y - lookRotation.eulerAngles.y) < 45*/)
         {
-            agent.speed = Mathf.Lerp(agent.speed, 1f * speedMultiplier, Time.deltaTime * 1f / speedMultiplier);
+            agent.speed = Mathf.Lerp(agent.speed, 1f * speedMultiplier, Time.deltaTime * 3f / (2 + speedMultiplier/3));
         }
         else if (character.applyRootMotion)
         {
