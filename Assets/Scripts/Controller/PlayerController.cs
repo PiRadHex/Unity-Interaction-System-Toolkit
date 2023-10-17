@@ -24,13 +24,22 @@ public class PlayerController : MonoBehaviour
     public bool Ragdoll = false;
     [SerializeField] private Transform ragdollRoot;
 
-    Camera cam;
-    PlayerMotor motor;
-    Vector3 destination;
-    bool isButtonDownOnInteractable = false;
+    private Camera cam;
+    private PlayerMotor motor;
+    private Vector3 destination;
+    private bool isButtonDownOnInteractable = false;
 
     private Rigidbody[] rigidbodies;
     private Collider[] colliders;
+
+    private NavMeshAgent agent;
+    private ThirdPersonCharacter character;
+    private new Rigidbody rigidbody;
+    private new CapsuleCollider collider;
+    private Animator animator;
+    private LineRenderer lineRenderer;
+
+    private float rigidbodyMass;
 
     // Get references
     void Start()
@@ -41,6 +50,15 @@ public class PlayerController : MonoBehaviour
 
         rigidbodies = ragdollRoot.GetComponentsInChildren<Rigidbody>();
         colliders = ragdollRoot.GetComponentsInChildren<Collider>();
+
+        agent = GetComponent<NavMeshAgent>();
+        character = GetComponent<ThirdPersonCharacter>();
+        rigidbody = GetComponent<Rigidbody>();
+        collider = GetComponent<CapsuleCollider>();
+        animator = GetComponent<Animator>();
+        lineRenderer = GetComponent<LineRenderer>();
+
+        rigidbodyMass = rigidbody.mass;
 
         SetNPC(Ragdoll);
         if (Ragdoll)
@@ -146,29 +164,23 @@ public class PlayerController : MonoBehaviour
     {
         mouseInfoBox.gameObject.SetActive(!_mode);
 
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
         if (agent != null) agent.enabled = !_mode;
 
-        PlayerMotor _motor = GetComponent<PlayerMotor>();
-        if (_motor != null)
+        if (motor != null)
         {
-            _motor.destinationFlag.gameObject.SetActive(!_mode);
-            _motor.enabled = !_mode;
+            motor.destinationFlag.gameObject.SetActive(!_mode);
+            motor.enabled = !_mode;
         }
 
-
-        ThirdPersonCharacter character = GetComponent<ThirdPersonCharacter>();
         if (character != null) character.enabled = !_mode;
 
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
         if (rigidbody != null)
         {
-            rigidbody.mass = _mode ? 0 : 50;
+            rigidbody.mass = _mode ? 0 : rigidbodyMass;
             rigidbody.useGravity = !_mode;
             rigidbody.isKinematic = _mode;
         }
 
-        CapsuleCollider collider = GetComponent<CapsuleCollider>();
         if (collider != null) collider.enabled = !_mode;
 
         foreach (Collider c in colliders)
@@ -192,10 +204,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Animator animator = GetComponent<Animator>();
         if (animator != null) animator.enabled = !_mode;
 
-        LineRenderer lineRenderer = GetComponent<LineRenderer>();
         if (lineRenderer != null) lineRenderer.enabled = !_mode;
 
     }

@@ -238,7 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 1700567302}
   - {fileID: 1510356521}
@@ -311,7 +310,6 @@ GameObject:
   - component: {fileID: 15065537}
   - component: {fileID: 15065536}
   - component: {fileID: 15065535}
-  - component: {fileID: 15065534}
   - component: {fileID: 15065533}
   m_Layer: 0
   m_Name: Cube (5)
@@ -352,24 +350,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &15065534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15065531}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 6
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &15065535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,8 +364,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 887826649}
-  outlines:
-  - {fileID: 15065534}
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -710,7 +688,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 39957337}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -749,7 +726,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 731965755}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &45820302
 MonoBehaviour:
@@ -869,7 +846,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 16218698}
-  outlines: []
   interactableComponents:
   - {fileID: 607855887}
   - {fileID: 1729588430}
@@ -1314,7 +1290,6 @@ GameObject:
   - component: {fileID: 90916724}
   - component: {fileID: 90916723}
   - component: {fileID: 90916722}
-  - component: {fileID: 90916721}
   - component: {fileID: 90916720}
   m_Layer: 0
   m_Name: Cube (3)
@@ -1354,24 +1329,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &90916721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90916718}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 6
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &90916722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,8 +1343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1958728231}
-  outlines:
-  - {fileID: 90916721}
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -1516,11 +1471,12 @@ MonoBehaviour:
   interactForEachTrigger: 1
   interactableComponents:
   - {fileID: 1980653861}
-  collisionCheckTags: []
-  collisionCheckLayers:
-  - Default
-  collisionCheckNames:
+  collisionCheckTags:
   - Player
+  - RandomRunner
+  - Gatherable
+  collisionCheckLayers: []
+  collisionCheckNames: []
 --- !u!65 &106353686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1650,7 +1606,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 420303033}
-  outlines: []
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -2036,7 +1991,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 1154769433}
   - {fileID: 1224001536}
@@ -2091,7 +2045,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1646002957}
-  outlines: []
   interactableComponents:
   - {fileID: 2144568551}
   - {fileID: 939114866}
@@ -2208,7 +2161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 219812972}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -2866,7 +2818,6 @@ GameObject:
   - component: {fileID: 269742559}
   - component: {fileID: 269742558}
   - component: {fileID: 269742557}
-  - component: {fileID: 269742556}
   - component: {fileID: 269742555}
   m_Layer: 0
   m_Name: Cube (6)
@@ -2906,24 +2857,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &269742556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269742553}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 6
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &269742557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2938,8 +2871,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 420303033}
-  outlines:
-  - {fileID: 269742556}
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 1
   INTERACT_DELAY: 0
@@ -3081,7 +3012,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 420303033}
-  outlines: []
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -3190,7 +3120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 317677687}
-  outlines: []
   virtualCamera: {fileID: 1482802458}
   targetPriority: 11
   setPriority: 0
@@ -3277,7 +3206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 440367693}
-  outlines: []
   interactableComponents:
   - {fileID: 219812973}
   - {fileID: 693437744}
@@ -4050,6 +3978,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7583864277027032243, guid: 305064690076d8e478168f47b4297756,
+        type: 3}
+      propertyPath: targetColor.b
+      value: 0.754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583864277027032243, guid: 305064690076d8e478168f47b4297756,
+        type: 3}
+      propertyPath: targetColor.g
+      value: 0.47087505
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583864277027032243, guid: 305064690076d8e478168f47b4297756,
+        type: 3}
+      propertyPath: targetColor.r
+      value: 0.22356708
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 305064690076d8e478168f47b4297756, type: 3}
 --- !u!1 &359222002
@@ -4454,7 +4397,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 376472068}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -4578,7 +4520,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 1872748634}
   - {fileID: 2049121211}
@@ -4662,7 +4603,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 405746973}
-  outlines: []
   materialToSwitch: {fileID: 2100000, guid: 7499b6606910be64d9717515a06bd970, type: 2}
   targetRenderer: {fileID: 1267532566}
   timeToReset: 0.2
@@ -5163,7 +5103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 413477105}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -5249,7 +5188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 433155258}
-  outlines: []
   materialToSwitch: {fileID: 2100000, guid: 7499b6606910be64d9717515a06bd970, type: 2}
   targetRenderer: {fileID: 1574411148}
   timeToReset: 0.2
@@ -5334,7 +5272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 463640816}
-  outlines: []
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -5924,7 +5861,6 @@ GameObject:
   - component: {fileID: 556407362}
   - component: {fileID: 556407361}
   - component: {fileID: 556407360}
-  - component: {fileID: 556407359}
   m_Layer: 0
   m_Name: ButtonStand7
   m_TagString: Untagged
@@ -5948,24 +5884,6 @@ Transform:
   m_Father: {fileID: 1838045706}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &556407359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556407356}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 4
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &556407360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5980,8 +5898,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1746970480}
-  outlines:
-  - {fileID: 556407359}
   interactableComponents:
   - {fileID: 1391400582}
   - {fileID: 294481989}
@@ -6767,7 +6683,6 @@ GameObject:
   - component: {fileID: 585537095}
   - component: {fileID: 585537094}
   - component: {fileID: 585537093}
-  - component: {fileID: 585537092}
   - component: {fileID: 585537091}
   m_Layer: 0
   m_Name: Cube (4)
@@ -6807,24 +6722,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &585537092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585537089}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 6
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &585537093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6839,8 +6736,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 2032394290}
-  outlines:
-  - {fileID: 585537092}
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -7093,7 +6988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 607855886}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -7375,7 +7269,6 @@ GameObject:
   - component: {fileID: 636868639}
   - component: {fileID: 636868638}
   - component: {fileID: 636868637}
-  - component: {fileID: 636868636}
   - component: {fileID: 636868635}
   m_Layer: 0
   m_Name: Cube (2)
@@ -7415,24 +7308,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &636868636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636868633}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 6
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &636868637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7447,8 +7322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1452086715}
-  outlines:
-  - {fileID: 636868636}
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -7753,14 +7626,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664106149}
-  m_LocalRotation: {x: -0.000000004199514, y: 0.93362045, z: -0.35826376, w: -0.000000010943759}
+  m_LocalRotation: {x: 0.000000011473281, y: 0.93362045, z: -0.35826376, w: 0.000000029898892}
   m_LocalPosition: {x: 0, y: 10, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1159517589}
   m_Father: {fileID: 731965755}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 26.991, y: 65.16, z: 0}
 --- !u!114 &664106151
 MonoBehaviour:
@@ -7961,7 +7834,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 693437742}
-  outlines: []
   virtualCameras:
   - {fileID: 664106152}
   - {fileID: 1356977816}
@@ -8018,7 +7890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1646002957}
-  outlines: []
   interactableComponents:
   - {fileID: 1428616602}
   - {fileID: 780995399}
@@ -8138,7 +8009,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 711521163}
-  outlines: []
   reset: 0
   inputNumber: -1
   outputNumber: 0
@@ -8490,7 +8360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 780995398}
-  outlines: []
   isPauseButton: 0
   audio: {fileID: 8300000, guid: 4ef317782691ea9468bd94f17c385125, type: 3}
   sources:
@@ -8723,7 +8592,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 812834799}
-  outlines: []
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -8785,7 +8653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 816277869}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -9156,7 +9023,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 833611646}
-  outlines: []
   materialToSwitch: {fileID: 2100000, guid: 7499b6606910be64d9717515a06bd970, type: 2}
   targetRenderer: {fileID: 1615755641}
   timeToReset: 0.2
@@ -10494,7 +10360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 939114865}
-  outlines: []
   isPauseButton: 1
   audio: {fileID: 8300000, guid: 4ef317782691ea9468bd94f17c385125, type: 3}
   sources:
@@ -10570,7 +10435,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 943216062}
-  outlines: []
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -10623,12 +10487,12 @@ PrefabInstance:
     - target: {fileID: 5387092385509836257, guid: 305064690076d8e478168f47b4297756,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.000000010943762
+      value: 0.00000002989889
       objectReference: {fileID: 0}
     - target: {fileID: 5387092385509836257, guid: 305064690076d8e478168f47b4297756,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000004199515
+      value: 0.000000011473281
       objectReference: {fileID: 0}
     - target: {fileID: 5387092385509836257, guid: 305064690076d8e478168f47b4297756,
         type: 3}
@@ -10735,6 +10599,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1f0b63dc2ac66e045817adcf8f7f51fd, type: 2}
+    - target: {fileID: 7583864277027032243, guid: 305064690076d8e478168f47b4297756,
+        type: 3}
+      propertyPath: targetColor.b
+      value: 0.28627452
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583864277027032243, guid: 305064690076d8e478168f47b4297756,
+        type: 3}
+      propertyPath: targetColor.g
+      value: 0.827451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583864277027032243, guid: 305064690076d8e478168f47b4297756,
+        type: 3}
+      propertyPath: targetColor.r
+      value: 0.7176471
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 305064690076d8e478168f47b4297756, type: 3}
 --- !u!1 &951344636
@@ -10786,7 +10665,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 951344637}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -11198,7 +11076,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 1423562743}
   - {fileID: 711521164}
@@ -11215,7 +11092,6 @@ GameObject:
   - component: {fileID: 1022103177}
   - component: {fileID: 1022103176}
   - component: {fileID: 1022103175}
-  - component: {fileID: 1022103174}
   - component: {fileID: 1022103180}
   m_Layer: 0
   m_Name: Cube (1)
@@ -11224,24 +11100,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1022103174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022103173}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 6
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &1022103175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11256,8 +11114,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 321706884}
-  outlines:
-  - {fileID: 1022103174}
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -11785,11 +11641,12 @@ MonoBehaviour:
   interactForEachTrigger: 1
   interactableComponents:
   - {fileID: 413477106}
-  collisionCheckTags: []
-  collisionCheckLayers:
-  - Default
-  collisionCheckNames:
+  collisionCheckTags:
   - Player
+  - RandomRunner
+  - Gatherable
+  collisionCheckLayers: []
+  collisionCheckNames: []
 --- !u!65 &1127777445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12025,7 +11882,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1154769432}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -12134,7 +11990,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1157976725}
-  outlines: []
   materialToSwitch: {fileID: 2100000, guid: 7499b6606910be64d9717515a06bd970, type: 2}
   targetRenderer: {fileID: 1472842906}
   timeToReset: 0.2
@@ -12185,7 +12040,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1158947934}
-  outlines: []
   materialToSwitch: {fileID: 2100000, guid: 7499b6606910be64d9717515a06bd970, type: 2}
   targetRenderer: {fileID: 2113714140}
   timeToReset: 0.2
@@ -12552,7 +12406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186849130}
-  outlines: []
   materialToSwitch: {fileID: 2100000, guid: 7499b6606910be64d9717515a06bd970, type: 2}
   targetRenderer: {fileID: 1250974605}
   timeToReset: 0.2
@@ -13311,11 +13164,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1315935682}
     m_Modifications:
-    - target: {fileID: 5387092386527707171, guid: 283b920c928db2746a0495478e5dc2eb,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5387092386527707178, guid: 283b920c928db2746a0495478e5dc2eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -13606,7 +13454,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1224001535}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -14690,7 +14537,7 @@ Transform:
   m_Children:
   - {fileID: 79669161}
   m_Father: {fileID: 731965755}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 26.991, y: 65.16, z: 0}
 --- !u!114 &1356977815
 MonoBehaviour:
@@ -15045,7 +14892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1746970480}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -15162,7 +15008,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1508054543}
-  outlines: []
   urlToOpen: https://piradhex.itch.io/
 --- !u!114 &1404941023
 MonoBehaviour:
@@ -15458,7 +15303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1423562742}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -15570,7 +15414,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1428616601}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -15679,7 +15522,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1441969331}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -16224,7 +16066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 2132631720}
   - {fileID: 1441969332}
@@ -16274,7 +16115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1510356520}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -17048,7 +16888,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1599909953}
-  outlines: []
   materialToSwitch: {fileID: 2100000, guid: 7499b6606910be64d9717515a06bd970, type: 2}
   targetRenderer: {fileID: 1886218576}
   timeToReset: 0.2
@@ -18324,7 +18163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1700567301}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -18453,7 +18291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 420303033}
-  outlines: []
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -18762,7 +18599,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 1926921848}
   - {fileID: 376472069}
@@ -18812,7 +18648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1729588429}
-  outlines: []
   virtualCamera: {fileID: 1946289234}
   targetPriority: 11
   setPriority: 0
@@ -18862,7 +18697,6 @@ GameObject:
   - component: {fileID: 1756616064}
   - component: {fileID: 1756616063}
   - component: {fileID: 1756616062}
-  - component: {fileID: 1756616061}
   m_Layer: 0
   m_Name: ButtonStand8
   m_TagString: Untagged
@@ -18886,24 +18720,6 @@ Transform:
   m_Father: {fileID: 1520782515}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1756616061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756616058}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.7730651, b: 0.23018867, a: 1}
-  outlineWidth: 4
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &1756616062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18918,8 +18734,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 812834799}
-  outlines:
-  - {fileID: 1756616061}
   interactableComponents:
   - {fileID: 1774484202}
   - {fileID: 1942238945}
@@ -19311,7 +19125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 812834799}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -19381,11 +19194,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1315935682}
     m_Modifications:
-    - target: {fileID: 5387092386527707171, guid: 283b920c928db2746a0495478e5dc2eb,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5387092386527707178, guid: 283b920c928db2746a0495478e5dc2eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -19504,7 +19312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1795134802}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -20317,11 +20124,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1315935682}
     m_Modifications:
-    - target: {fileID: 5387092386527707171, guid: 283b920c928db2746a0495478e5dc2eb,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5387092386527707178, guid: 283b920c928db2746a0495478e5dc2eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -20786,7 +20588,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1872748633}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -20964,7 +20765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 951344638}
   - {fileID: 39957338}
@@ -21476,7 +21276,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1186379789}
-  outlines: []
   interactableComponents:
   - {fileID: 816277870}
   - {fileID: 1795134803}
@@ -21624,7 +21423,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1920577219}
-  outlines: []
   virtualCamera: {fileID: 75882660}
   targetPriority: 11
   setPriority: 1
@@ -21679,7 +21477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1926921847}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -21822,7 +21619,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 812834799}
-  outlines: []
   virtualCameras:
   - {fileID: 1995220229}
   - {fileID: 75882660}
@@ -22179,7 +21975,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1967189169}
-  outlines: []
   hasOriginalAutoSet: 0
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -22304,7 +22099,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 1980653860}
-  outlines: []
   reset: 0
   inputNumber: -1
   outputNumber: 0
@@ -22926,7 +22720,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 2049121210}
-  outlines: []
   reset: 0
   inputNumber: 1
   outputNumber: 0
@@ -23214,7 +23007,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 731965755}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2081979930
 MonoBehaviour:
@@ -23865,7 +23658,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 2132631719}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0
@@ -23977,7 +23769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 2144568550}
-  outlines: []
   hasOriginalAutoSet: 1
   hasSecondaryAutoSet: 0
   INTERACT_DELAY: 0

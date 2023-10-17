@@ -20,11 +20,11 @@ public class Interactable : MonoBehaviour
 
     bool hasInteracted = false; // Have we already interacted with the object?
 
-    [SerializeField] List<Outline> outlines;
+    //[SerializeField] List<Outline> outlines;
 
     public virtual void Start()
     {
-        DisableOutlines();
+        //DisableOutlines();
         gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
@@ -34,7 +34,7 @@ public class Interactable : MonoBehaviour
         Debug.Log(interactingObjectTransform.name + " has interacted with " + transform.name);
 
         // Delay the disabling of outlines by 0.5 seconds
-        Invoke("DisableOutlines", 0.5f);
+        //Invoke("DisableOutlines", 0.5f);
     }
 
     // Called when the object starts being focused
@@ -43,7 +43,7 @@ public class Interactable : MonoBehaviour
         isFocus = true;
         player = playerTransform;
         hasInteracted = false;
-        EnableOutlines();
+        //EnableOutlines();
     }
 
     // Called when the object is no longer focused
@@ -52,7 +52,7 @@ public class Interactable : MonoBehaviour
         isFocus = false;
         player = null;
         hasInteracted = false;
-        DisableOutlines();
+        //DisableOutlines();
     }
 
     /// <summary>
@@ -89,6 +89,7 @@ public class Interactable : MonoBehaviour
         Gizmos.DrawWireSphere(interactionTransform.position, radius);
     }
 
+    /*
     private void DisableOutlines()
     {
         foreach (Outline outline in outlines)
@@ -104,6 +105,6 @@ public class Interactable : MonoBehaviour
             outline.enabled = true;
         }
     }
-
+    */
 
 }

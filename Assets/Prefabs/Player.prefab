@@ -328,9 +328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   interactionTransform: {fileID: 5719362792534740846}
-  outlines: []
   image: {fileID: 4746429576916874791}
-  targetColor: {r: 0.1194909, g: 0.46226418, b: 0.1584691, a: 0.68235296}
+  targetColor: {r: 0.20784314, g: 0.8, b: 0.8666667, a: 0.78431374}
   timeToReset: 0.2
   dontReset: 0
 --- !u!1 &5387092385509836270
@@ -358,7 +357,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5387092385509836270}
-  m_LocalRotation: {x: -0.000000011473282, y: 0.93362045, z: -0.35826376, w: -0.000000029898896}
+  m_LocalRotation: {x: 0.0000000041995127, y: 0.93362045, z: -0.35826376, w: 0.000000010943755}
   m_LocalPosition: {x: 0, y: 10, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -511,7 +510,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5387092386527707179}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 35
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1140,6 +1139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969453239897013006, guid: 5b6ae6758fcd09441bba02be416d1eb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gatherable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b6ae6758fcd09441bba02be416d1eb3, type: 3}

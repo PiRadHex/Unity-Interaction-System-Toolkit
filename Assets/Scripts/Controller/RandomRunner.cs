@@ -20,6 +20,12 @@ public class RandomRunner : MonoBehaviour
 
     [SerializeField] private float maxDestinationRange = 5;
 
+    private new Rigidbody rigidbody;
+    private new CapsuleCollider collider;
+    private Animator animator;
+
+    private float rigidbodyMass;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +34,12 @@ public class RandomRunner : MonoBehaviour
 
         rigidbodies = ragdollRoot.GetComponentsInChildren<Rigidbody>();
         colliders = ragdollRoot.GetComponentsInChildren<Collider>();
+
+        rigidbody = GetComponent<Rigidbody>();
+        collider = GetComponent<CapsuleCollider>();
+        animator = GetComponent<Animator>();
+
+        rigidbodyMass = rigidbody.mass;
 
         SetNPC(Ragdoll);
         if (Ragdoll)
@@ -96,21 +108,17 @@ public class RandomRunner : MonoBehaviour
 
     public void SetNPC(bool _mode = true)
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
         if (agent != null) agent.enabled = !_mode;
 
-        ThirdPersonCharacter character = GetComponent<ThirdPersonCharacter>();
         if (character != null) character.enabled = !_mode;
 
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
         if (rigidbody != null)
         {
-            rigidbody.mass = _mode ? 0 : 50;
+            rigidbody.mass = _mode ? 0 : rigidbodyMass;
             rigidbody.useGravity = !_mode;
             rigidbody.isKinematic = _mode;
         }
 
-        CapsuleCollider collider = GetComponent<CapsuleCollider>();
         if (collider != null) collider.enabled = !_mode;
 
         foreach (Collider c in colliders)
@@ -129,7 +137,6 @@ public class RandomRunner : MonoBehaviour
             rig.interpolation = _mode ? RigidbodyInterpolation.Interpolate : RigidbodyInterpolation.None;
         }
 
-        Animator animator = GetComponent<Animator>();
         if (animator != null) animator.enabled = !_mode;
 
         Ragdoll = _mode;
