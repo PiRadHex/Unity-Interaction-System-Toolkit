@@ -2,19 +2,26 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using TMPro;
 
 
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
-
     public Interactable focus;
 
+    [Header("Layer")]
     public LayerMask movementMask;
     public LayerMask interactableMask;
 
-    public bool Ragdoll = false;
+    [Header("Mouse Info")]
+    public Transform mouseInfoBox;
+    public TextMeshProUGUI mouseInfoText;
+    public string onRaycastText = "Interactable";
+    public Interactable onFocusInteractable;
 
+    [Header("Ragdoll")]
+    public bool Ragdoll = false;
     [SerializeField] private Transform ragdollRoot;
 
     Camera cam;
@@ -46,17 +53,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mouseInfoBox.gameObject.SetActive(false);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        //if (EventSystem.current.IsPointerOverGameObject())
-            //return;
+        if (Physics.Raycast(ray, out hit, 100, interactableMask))
+        {
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+            if (interactable != null && Mathf.Abs(hit.point.y - transform.position.y) < 15)
+            {
+                mouseInfoBox.position = Input.mousePosition + new Vector3(-100 / 2, 18 / 2, 0);
+                mouseInfoBox.gameObject.SetActive(true);
+                mouseInfoText.text = onRaycastText;
+            }
+        }
 
         // If we press left mouse
         if (Input.GetMouseButtonDown(0))
         {
-            // We create a ray
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
             // If the ray hits Interactable
             if (Physics.Raycast(ray, out hit, 100, interactableMask))
             {
@@ -65,18 +79,14 @@ public class PlayerController : MonoBehaviour
                 {
                     SetFocus(interactable);
                     destination = interactable.interactionTransform.position;
-                    //destination = new Vector3(8888, 8888, 8888);
                     isButtonDownOnInteractable = true;
+                    onFocusInteractable.Interact(transform);
                 }
             }
         }
 
         if (Input.GetMouseButton(0) && !isButtonDownOnInteractable)
         {
-            // We create a ray
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
             // If the ray hits Ground
             if (Physics.Raycast(ray, out hit, 100, movementMask))
             {
@@ -94,7 +104,7 @@ public class PlayerController : MonoBehaviour
             isButtonDownOnInteractable = false;
         }
 
-        if (/*destination != new Vector3(8888, 8888, 8888) && */focus == null)
+        if (focus == null)
         {
             motor.MoveToPoint(destination);   // Move to where we hit
         }
@@ -134,6 +144,8 @@ public class PlayerController : MonoBehaviour
 
     public void SetNPC(bool _mode = true)
     {
+        mouseInfoBox.gameObject.SetActive(!_mode);
+
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         if (agent != null) agent.enabled = !_mode;
 
@@ -172,6 +184,7 @@ public class PlayerController : MonoBehaviour
                 rig.detectCollisions = true;
             }
             rig.useGravity = _mode;
+            rig.interpolation = _mode ? RigidbodyInterpolation.Interpolate : RigidbodyInterpolation.None;
             
             if (rig.name == "face" || rig.name == "Head" || rig.name == "LowManHead")
             {

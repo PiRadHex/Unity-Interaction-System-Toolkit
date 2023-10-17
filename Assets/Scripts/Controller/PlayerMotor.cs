@@ -86,15 +86,7 @@ public class PlayerMotor : MonoBehaviour
     {
         if (agent.remainingDistance > agent.stoppingDistance)
         {
-            if (agent.remainingDistance / agent.stoppingDistance > 5)
-            {
-                character.Move(agent.desiredVelocity / speedMultiplier, false, false);
-            }
-            else
-            {
-                character.Move(agent.desiredVelocity / (1 + speedMultiplier) * 2, false, false);
-            }
-                
+            character.Move(agent.desiredVelocity / speedMultiplier, false, false);
             destinationFlag.gameObject.SetActive(true);
             MoveDestinationFlagAtPosition(agent.destination, false, 5f); // Not sure yet, but keep in mind there is a trade-off between non-teleporting flag movement and displaying the path.
             if (agent.hasPath) DrawPath();
@@ -131,20 +123,23 @@ public class PlayerMotor : MonoBehaviour
 
     private void UpdateAgentSpeed()
     {
-        Vector3 direction = (agent.destination - transform.position).normalized;
-        Quaternion lookRotation = direction.x == 0 && direction.z == 0 ? new Quaternion(0f, 0f, 0f, 0f) : Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+        float agentSpeed = agent.speed;
 
-        if (agent.remainingDistance / agent.stoppingDistance > 10 /*&& Mathf.Abs(agent.transform.rotation.eulerAngles.y - lookRotation.eulerAngles.y) < 45*/)
+        if (agent.remainingDistance / agent.stoppingDistance > 10)
         {
-            agent.speed = Mathf.Lerp(agent.speed, 1f * speedMultiplier, Time.deltaTime * 3f / (2 + speedMultiplier/3));
-        }
-        else if (character.applyRootMotion)
-        {
-            agent.speed = Mathf.Lerp(agent.speed, 0.45f * (1 + speedMultiplier) / 2, Time.deltaTime * 10f);
+            if (agentSpeed < speedMultiplier - 0.45f)
+            {
+                agent.speed = Mathf.Lerp(agentSpeed, 1f * (speedMultiplier + 2), Time.deltaTime * 1f / (agentSpeed + 1));
+            }
+            else
+            {
+                agent.speed = Mathf.Lerp(agentSpeed, 1f * (speedMultiplier + 2), Time.deltaTime * 2f);
+            }
+
         }
         else
         {
-            agent.speed = Mathf.Lerp(agent.speed, 0.45f * (1 + speedMultiplier) / 2, Time.deltaTime * 3f);
+            agent.speed = Mathf.Lerp(agentSpeed, 0.45f * speedMultiplier, Time.deltaTime * 6f);
         }
         
     }

@@ -70,10 +70,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-            m_TurnAmount = Mathf.Lerp(m_TurnAmount, Mathf.Atan2(move.x, move.z), Time.deltaTime * 5f);
-			m_ForwardAmount = Mathf.Lerp(m_ForwardAmount, move.z, Time.deltaTime * 15f);
+			//m_TurnAmount = Mathf.Lerp(m_TurnAmount, Mathf.Atan2(move.x, move.z), Time.deltaTime * 5f);
+			//m_ForwardAmount = Mathf.Lerp(m_ForwardAmount, move.z, Time.deltaTime * 15f);
+			m_TurnAmount = Mathf.Atan2(move.x, move.z);
+			m_ForwardAmount = move.z;
 
-			ApplyExtraTurnRotation();
+
+            ApplyExtraTurnRotation();
 
 			// control and velocity handling is different when grounded and airborne:
 			/*if (m_IsGrounded)

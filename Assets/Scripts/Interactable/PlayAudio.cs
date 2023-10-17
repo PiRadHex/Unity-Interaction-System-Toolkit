@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayAudio : Interactable
 {
     public bool isPauseButton = false;
-    public AudioClip audio;
+    public new AudioClip audio;
     public List<AudioSource> sources;
 
     [Header("Audio Source Setting")]
