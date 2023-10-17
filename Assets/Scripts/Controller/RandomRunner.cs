@@ -10,7 +10,7 @@ public class RandomRunner : MonoBehaviour
 {
     public float speedMultiplier = 1f;
     public bool Ragdoll = false;
-    
+    public bool canBeKilledByButton = false;
     private NavMeshAgent agent;
     private ThirdPersonCharacter character;
 
@@ -41,8 +41,8 @@ public class RandomRunner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K)) SetNPC(true);
-        if (Input.GetKeyUp(KeyCode.K)) SetNPC(false);
+        if (Input.GetKeyDown(KeyCode.K) & canBeKilledByButton) SetNPC(true);
+        if (Input.GetKeyUp(KeyCode.K) & canBeKilledByButton) SetNPC(false);
         if (Ragdoll) return;
         SetRandomDestination();
         UpdateAgentSpeed();
@@ -63,14 +63,7 @@ public class RandomRunner : MonoBehaviour
     {
         if (agent.remainingDistance > agent.stoppingDistance)
         {
-            if (agent.remainingDistance / agent.stoppingDistance > 5)
-            {
-                character.Move(agent.desiredVelocity / speedMultiplier, false, false);
-            }
-            else
-            {
-                character.Move(agent.desiredVelocity / (1 + speedMultiplier) * 2, false, false);
-            }
+            character.Move(agent.desiredVelocity / speedMultiplier, false, false);
         }
         else
         {
@@ -80,16 +73,23 @@ public class RandomRunner : MonoBehaviour
 
     private void UpdateAgentSpeed()
     {
-        Vector3 direction = (agent.destination - transform.position).normalized;
-        Quaternion lookRotation = direction.x == 0 && direction.z == 0 ? new Quaternion(0f, 0f, 0f, 0f) : Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+        float agentSpeed = agent.speed;
 
         if (agent.remainingDistance / agent.stoppingDistance > 10)
         {
-            agent.speed = Mathf.Lerp(agent.speed, 1f * speedMultiplier, Time.deltaTime * 1f / speedMultiplier);
+            if (agentSpeed < speedMultiplier - 0.45f)
+            {
+                agent.speed = Mathf.Lerp(agentSpeed, 1f * (speedMultiplier + 2), Time.deltaTime * 1f / (agentSpeed + 1));
+            }
+            else
+            {
+                agent.speed = Mathf.Lerp(agentSpeed, 1f * (speedMultiplier + 2), Time.deltaTime * 2f);
+            }
+
         }
         else
         {
-            agent.speed = Mathf.Lerp(agent.speed, 0.45f * (1 + speedMultiplier) / 2, Time.deltaTime * 3f);
+            agent.speed = Mathf.Lerp(agentSpeed, 0.45f * speedMultiplier, Time.deltaTime * 6f);
         }
 
     }
@@ -105,7 +105,7 @@ public class RandomRunner : MonoBehaviour
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         if (rigidbody != null)
         {
-            rigidbody.mass = _mode ? 0 : 100;
+            rigidbody.mass = _mode ? 0 : 50;
             rigidbody.useGravity = !_mode;
             rigidbody.isKinematic = _mode;
         }
@@ -126,6 +126,7 @@ public class RandomRunner : MonoBehaviour
                 rig.detectCollisions = true;
             }
             rig.useGravity = _mode;
+            rig.interpolation = _mode ? RigidbodyInterpolation.Interpolate : RigidbodyInterpolation.None;
         }
 
         Animator animator = GetComponent<Animator>();

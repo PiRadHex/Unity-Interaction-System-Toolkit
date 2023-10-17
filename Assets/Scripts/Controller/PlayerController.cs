@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         if (rigidbody != null)
         {
-            rigidbody.mass = _mode ? 0 : 100;
+            rigidbody.mass = _mode ? 0 : 50;
             rigidbody.useGravity = !_mode;
             rigidbody.isKinematic = _mode;
         }
