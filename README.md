@@ -2,7 +2,7 @@
 
 This Unity Interaction System Toolkit is designed to provide a set of versatile scripts for creating interactive objects within your Unity projects. It allows you to easily implement interactive objects that the player can interact with, such as enemies, items, switches, and more.
 
-## Features
+## Key Features
 
 + Interactable: A base class for creating interactive objects with adjustable interaction radius and optional auto-open/close functionality. This class handles the core interaction logic.
 
@@ -24,4 +24,3 @@ Each script has its own specific use case and can be added to Unity GameObjects 
 ## Demo Scene
 
 To see the Interaction System Toolkit in action, we have provided a demo scene that showcases the possible usage scenarios for these scripts. You can test the functionality of the toolkit in this scene.
-Important Notes
