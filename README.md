@@ -2,9 +2,9 @@
 
 The **Interaction System Toolkit** is a collection of versatile scripts for creating interactive objects within your Unity projects. Whether you want to create objects that can be picked up, trigger events, change materials, or even switch cameras, this toolkit provides a set of ready-to-use components to streamline your game development process. This toolkit is open-source and free to use.
 
-<p align="center">
+<p align="center"><
 ![SharedScreenshot29_1](https://github.com/PiRadHex/Unity-Interaction-System-Toolkit/assets/124064917/820c6825-689e-4131-8177-3647bebcb41b)
-</p>
+/></p>
 
 ## Table of Contents
 
